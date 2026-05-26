@@ -265,6 +265,8 @@ $(foreach makefile,$(ARTIFACT_PATH_REQUIREMENT_PRODUCTS),\
 endif
 
 INTERNAL_PRODUCT := $(current_product_makefile)
+# GuardTalkOS: final package/copy-file strip after inherit merge (DEC-GT-002)
+-include vendor/guardtalk/radio-excised/product-config-late.mk
 # Strip and assign the PRODUCT_ variables.
 $(call strip-product-vars)
 
